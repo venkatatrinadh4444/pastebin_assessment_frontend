@@ -14,9 +14,11 @@ function escapeHtml(text: string) {
 export default async function PasteViewPage({
     params,
 }: {
-    params: { id: string }
+    params: Promise<{ id: string }>
 }) {
-    const res = await fetch(`${API_BASE}/api/pastes/${params.id}`, {
+    const { id } = await params
+    
+    const res = await fetch(`${API_BASE}/api/pastes/${id}`, {
         cache: 'no-store',
     })
 
