@@ -21,7 +21,6 @@ export default function CreatePastePage() {
 
     setLoading(true)
 
-    console.log('API_BASE:', API_BASE)
 
     try {
       const res = await fetch(`${API_BASE}/api/pastes`, {
@@ -53,7 +52,7 @@ export default function CreatePastePage() {
       <h1 className="text-2xl font-bold">Create Paste</h1>
 
       <textarea
-        className="w-full border p-2 h-40"
+        className="w-full border p-2 h-40 rounded-lg border-gray-200 shadow-sm"
         placeholder="Enter text..."
         value={content}
         onChange={(e) => setContent(e.target.value)}
@@ -63,7 +62,7 @@ export default function CreatePastePage() {
         <input
           type="number"
           placeholder="TTL (seconds)"
-          className="border p-2 w-full"
+          className="border p-2 w-full rounded-lg border-gray-200 shadow-sm"
           value={ttl}
           onChange={(e) => setTtl(e.target.value)}
           min={1}
@@ -71,7 +70,7 @@ export default function CreatePastePage() {
         <input
           type="number"
           placeholder="Max views"
-          className="border p-2 w-full"
+          className="border p-2 w-full rounded-lg border-gray-200 shadow-sm"
           value={maxViews}
           onChange={(e) => setMaxViews(e.target.value)}
           min={1}
@@ -83,7 +82,7 @@ export default function CreatePastePage() {
       <button
         onClick={handleSubmit}
         disabled={loading}
-        className="bg-black text-white px-4 py-2"
+        className="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 disabled:opacity-50 cursor-pointer"
       >
         {loading ? 'Creating...' : 'Create Paste'}
       </button>
