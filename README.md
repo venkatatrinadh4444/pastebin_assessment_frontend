@@ -14,7 +14,7 @@ and share a link to view them. Pastes can expire based on time or view count.
 
 ## Running Locally
 
-### Backend
+### Frontend
 ```bash
 git clone https://github.com/venkatatrinadh4444/pastebin_assessment_frontend.git
 cd pastebin_assessment_frontend
